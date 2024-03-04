@@ -1,0 +1,36 @@
+package scenes;
+
+import java.awt.Graphics;
+
+import hlp.lvlbld;
+import main.Game;
+import managers.TileManager;
+
+public class Playing extends GameScene implements SceneMethods {
+
+	private int[][] lvl;
+	private TileManager tilemanager ;
+	
+	
+	public Playing(Game game) {
+		super(game);
+		this.lvl = lvlbld.getlvldata();
+		tilemanager = new TileManager();
+		
+		System.out.println("in playing");
+	}
+
+	@Override
+	public void render(Graphics g) {
+		
+		for(int y=0;y<lvl.length;y++) {
+			
+			for(int x =0;x<lvl[y].length;x++) {
+				int id = lvl[y][x];
+				g.drawImage(tilemanager.getsprite(id), x*64, y*64, null);
+			}
+		}
+		
+	}
+
+}

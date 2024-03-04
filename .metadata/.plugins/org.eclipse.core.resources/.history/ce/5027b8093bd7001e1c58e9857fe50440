@@ -1,0 +1,110 @@
+package main;
+
+import javax.swing.JFrame;
+import inputs.KeyboardInput;
+import inputs.MouseInput;
+import scenes.Menu;
+import scenes.Playing;
+import scenes.Settings;
+
+
+@SuppressWarnings("serial")
+public class Game extends JFrame implements Runnable {
+	private GameScreen gamescreen;
+	private Thread gm_thread ;
+	private final int fps = 60;//set fps
+	private final int ups = 120;
+	
+	private KeyboardInput keyin;
+	private MouseInput Mousein;
+	private Render render;
+	private Menu menu;
+	private Playing playing;
+	private Settings settings;
+
+	public Game(){
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		initialise_classes();
+		setResizable(false);
+		add(gamescreen);
+		pack();
+		setVisible(true);
+		
+	}
+	private void UInputs() {
+		keyin = new KeyboardInput();
+		Mousein = new MouseInput() ;
+		addMouseListener(Mousein);
+		addMouseMotionListener(Mousein);
+		addKeyListener(keyin);
+		requestFocus();
+	}
+	private void initialise_classes(){
+		this.gamescreen = new GameScreen(this);
+		render = new Render(this);
+		menu = new Menu(this);
+		playing = new Playing(this);
+		settings = new Settings(this);
+	}
+	private void start() {
+		gm_thread = new Thread(this) {};//creates new thread_1
+		                                //class implements runnable so no need to give new Runnable 
+			gm_thread.start();
+		}
+	
+	private void update() {
+		//does nothing
+	}
+		
+	@Override
+	public void run() {
+		//all the code to be implemented in thread
+		double timebFrames = 1000000000.0/fps;
+		double timebUpdates = 1000000000.0/ups;
+		long Stime_nano ;
+		long  LastfTimeF= System.nanoTime();
+		long  LastfTimeU= System.nanoTime();
+		long  Last_check= System.currentTimeMillis();
+		int frameRate=0 ;
+		int UpdateRate =0;
+		while(true) {
+			Stime_nano = System.nanoTime();
+			if((Stime_nano - LastfTimeF) >=timebFrames) {
+				LastfTimeF = Stime_nano;
+				frameRate++;
+				repaint();
+				}else if((Stime_nano - LastfTimeU )>=timebUpdates) {
+					update();
+					UpdateRate++;
+					LastfTimeU = Stime_nano;
+				}else if(System.currentTimeMillis() - Last_check >= 1000) {
+					System.out.println("FPS :" + frameRate+" || "+"UPS :"+UpdateRate);
+					frameRate = 0;
+					UpdateRate = 0;
+				}else {
+					continue;
+				}
+		}
+	}
+	
+	public static void main(String[] args) {
+		Game game = new Game();
+		game.start();
+	}
+	
+	
+	//getters
+	public Render getrender() {
+		return render;
+	}
+	public Menu getmenu() {
+		return menu;
+	}
+	public Playing getplaying() {
+		return playing;
+	}
+	public Settings getsettingd() {
+		return settings;
+	}
+}

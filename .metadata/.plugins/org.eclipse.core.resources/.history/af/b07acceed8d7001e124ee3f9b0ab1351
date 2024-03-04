@@ -1,0 +1,22 @@
+package main;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.imageio.ImageIO;
+
+public class test {
+	
+	
+	public static void main() {
+		InputStream is = new InputStream();
+		try {
+			img = ImageIO.read(is);
+			
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		
+	}
+
+}

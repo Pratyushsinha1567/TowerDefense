@@ -1,0 +1,7 @@
+package hlp;
+
+public class LoadSave {
+	
+	public static BufferedImage getSpriteAtlas()
+
+}

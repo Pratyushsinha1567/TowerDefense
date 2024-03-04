@@ -1,0 +1,31 @@
+package managers;
+
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+
+import objects.tile;
+
+
+public class TileManager {
+	public tile ROAD,SAND,GRASS;
+	public BufferedImage atlas;
+	public ArrayList<tile> tiles = new ArrayList<>();
+	public TileManager() {
+		loadatlas();
+		createtiles();
+		
+	}
+	private void createtiles() {
+		tiles.add(GRASS= new tile(getsprite(1,1)));//id 0
+		tiles.add(ROAD = new tile(getsprite(1,4)));//id 1
+		tiles.add(SAND = new tile(getsprite(5,1)));//id 2
+	}
+	public BufferedImage getsprite(int id) {
+		return tiles.get(id).
+	}
+	
+	private BufferedImage getsprite(int x,int y) {
+		return atlas.getSubimage(x*64, y*64, 64, 64);
+	}
+
+}

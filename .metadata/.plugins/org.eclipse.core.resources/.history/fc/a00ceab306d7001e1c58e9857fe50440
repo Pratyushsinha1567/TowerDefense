@@ -1,0 +1,9 @@
+package main;
+
+public enum GmScene {
+PLAYING,
+MENU,
+STTINGS
+
+public static GmScene gamestate = MENU;
+}

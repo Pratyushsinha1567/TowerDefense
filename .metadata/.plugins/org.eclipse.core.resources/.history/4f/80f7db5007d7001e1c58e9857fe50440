@@ -1,0 +1,26 @@
+package main;
+
+
+import java.awt.Dimension;
+import javax.swing.JPanel;
+
+
+@SuppressWarnings("serial")
+public class GameScreen extends JPanel {
+	private Game game;
+	private Dimension size;
+	private Render render;
+	public GameScreen(Game game) {
+		this.game = game;
+		SetScreenSize();
+		
+	}
+	private void SetScreenSize() {
+		this.size = new Dimension(640,640); //size of screen is set here
+		setMinimumSize(size);
+		setPreferredSize(size);
+		setMaximumSize(size);
+	}
+	
+}
+

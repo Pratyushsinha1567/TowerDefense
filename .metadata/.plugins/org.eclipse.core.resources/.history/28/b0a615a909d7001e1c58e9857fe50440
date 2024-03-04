@@ -1,0 +1,8 @@
+package scenes;
+
+import main.Game;
+
+public class Menu extends GameScene{
+
+	
+}

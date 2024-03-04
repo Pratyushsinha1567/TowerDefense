@@ -1,0 +1,12 @@
+package hlp;
+
+import java.awt.image.BufferedImage;
+
+public class LoadSave {
+	
+	public static BufferedImage getSpriteAtlas() {
+		return null;
+		
+	}
+
+}

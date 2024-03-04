@@ -1,0 +1,10 @@
+package objects;
+
+import java.awt.image.BufferedImage;
+
+public class tiles {
+	public tiles(BufferedImage sprite) {
+		
+	}
+
+}

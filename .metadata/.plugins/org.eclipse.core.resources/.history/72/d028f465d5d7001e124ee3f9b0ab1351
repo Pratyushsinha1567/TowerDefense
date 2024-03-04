@@ -1,0 +1,25 @@
+package scenes;
+
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+
+import main.Game;
+
+public class Menu extends GameScene implements SceneMethods{
+
+	private BufferedImage img;
+	ArrayList<>
+	public Menu(Game game) {
+		super(game);
+		
+		
+	}
+
+	@Override
+	public void render(Graphics g) {
+		
+		
+	}
+
+	
+}

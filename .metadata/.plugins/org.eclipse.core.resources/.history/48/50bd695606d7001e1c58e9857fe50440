@@ -1,0 +1,7 @@
+package main;
+
+public class Render {
+	private GameScreen gamescreen ;
+	public Render(GameScreen gamescreen)
+
+}

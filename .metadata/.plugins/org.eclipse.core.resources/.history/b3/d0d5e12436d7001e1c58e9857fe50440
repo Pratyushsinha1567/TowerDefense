@@ -1,0 +1,13 @@
+package hlp;
+
+import java.awt.image.BufferedImage;
+
+public class LoadSave {
+	
+	public static BufferedImage getSpriteAtlas() {
+		BufferedImage img;
+		InputStream in = getclass().getResourceAsStream()
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package hlp;
+
+public class lvlbld {
+	
+	public static int[][] getlvldata(){
+		
+		int[][] lvl = {
+		
+	}
+
+}

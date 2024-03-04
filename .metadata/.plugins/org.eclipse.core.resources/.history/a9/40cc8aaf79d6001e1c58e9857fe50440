@@ -1,0 +1,10 @@
+package inputs;
+
+public class MouseInput implements MouseListen{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

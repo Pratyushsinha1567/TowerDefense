@@ -1,0 +1,14 @@
+package hlp;
+
+import java.awt.image.BufferedImage;
+import java.io.InputStream;
+
+public class LoadSave {
+	
+	public static BufferedImage getSpriteAtlas() {
+		BufferedImage img;
+		InputStream in = getClass().getResourceAsStream(/towerDefense_tilesheet.png);
+		
+	}
+
+}

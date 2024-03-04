@@ -1,0 +1,25 @@
+package hlp;
+
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.imageio.ImageIO;
+
+public class LoadSave {
+	
+	public static BufferedImage getSpriteAtlas() {
+		BufferedImage img;
+		
+		InputStream in = LoadSave.class.getClassLoader().getResourceAsStream("/towerDefense_tilesheet.png");
+		
+		try {
+			img = ImageIO.read(in);
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return img;
+		
+	}
+
+}

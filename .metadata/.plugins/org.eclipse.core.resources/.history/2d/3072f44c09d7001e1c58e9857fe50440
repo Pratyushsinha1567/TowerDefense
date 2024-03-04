@@ -1,0 +1,8 @@
+package scenes;
+
+public interface SceneMethods {
+	public render(Graphics g) {
+		
+	}
+
+}

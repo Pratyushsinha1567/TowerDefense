@@ -1,0 +1,25 @@
+package main;
+
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.imageio.ImageIO;
+
+public class test {
+	
+	
+	public static void main() {
+		BufferedImage img;
+		InputStream is = new InputStream();
+		is = getClass().getResourceAsStream("/towerDefense_tilesheet.png");
+		try {
+			img = ImageIO.read(is);
+			
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		
+	}
+
+}

@@ -1,0 +1,12 @@
+package scenes;
+
+import main.Game;
+
+public class Menu extends GameScene{
+
+	public Menu(Game game) {
+		super(game);
+		// TODO Auto-generated constructor stub
+	}
+
+}
